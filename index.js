@@ -7,17 +7,17 @@ const chalk = require('chalk')
 // Start scraping
 let rawHtml = fs.readFileSync('./raw/LinkedIn.htm').toString()
 let $ = cheerio.load(rawHtml)
-let dataId = '#bpr-guid-1421711'
-let data = JSON.parse(decodeEntities($(dataId).html()))
+let searchString = 'code[id^="bpr"]:contains("fs_wvmpCard")'
+let data = JSON.parse(decodeEntities($(searchString).html()))
 
 // Write extracted data json to separate file
 fs.writeFileSync('./raw/data.json', JSON.stringify(data, null, 2), 'utf-8')
 
 // Show user data
 function showUser(userData) {
-	return `${chalk.yellow(userData.firstName)} ${chalk.yellow(decodeEntities(userData.lastName))}
-	${chalk.blue(userData.occupation)}
-	URL: https://www.linkedin.com/in/${userData.publicIdentifier}/
+ return `${chalk.yellow(userData.firstName)} ${chalk.yellow(decodeEntities(userData.lastName))}
+ ${chalk.blue(userData.occupation)}
+ URL: https://www.linkedin.com/in/${userData.publicIdentifier}/
 `
 }
 
@@ -35,8 +35,8 @@ ${chalk.blue('---------------------------------------------------------')}
 `)
 
 for (let i = 0; i < objects; i++) {
-	if (data.included[i].firstName) {
-		no += 1;
-		console.log(`${no}. ${showUser(data.included[i])}`)
-	}
+ if (data.included[i].firstName) {
+   no += 1;
+   console.log(`${no}. ${showUser(data.included[i])}`)
+ }
 }
