@@ -1,0 +1,16 @@
+{
+  "name": "profile-views",
+  "version": "1.0.0",
+  "description": "Extract profile views from Linkedin page",
+  "devDependencies": {
+    "chalk": "^2.4.2",
+    "cheerio": "^1.0.0-rc.2",
+    "decode-entities": "^1.0.7"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "author": "Vladimir Jovanović <vladimir@bitersen.com>",
+  "license": "MIT"
+}

@@ -1,0 +1,4 @@
+/node_modules
+/raw/*.htm
+/raw/*.html
+/raw/*.json
