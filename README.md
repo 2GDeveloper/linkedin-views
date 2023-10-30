@@ -8,7 +8,7 @@ To install this script follow these steps:
 3. Run `npm install`
 
 ## Scrape LinkedIn page
-To see all views from Linkedin page, go to https://www.linkedin.com/me/profile-views/urn:li:wvmp:summary/ and in your browser select to save page as HTML only. Save file as **LinkedIn.htm** into `/raw` folder.
+To see all views from Linkedin page, go to https://www.linkedin.com/me/profile-views/urn:li:wvmp:summary/ and in your browser select to save page as HTML only. Save file as **LinkedIn.html** into `/raw` folder.
 
 Run `npm start` to display all views.
 
